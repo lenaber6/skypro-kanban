@@ -5,8 +5,12 @@ import './App.css'
 import WelcomeMessage from './components/WelcomeMessage';
 
 function App() {
+  // Задаём имя пользователя, которое будет передано в компонент WelcomMessage
+  const userName = "Алексей";
   const [count, setCount] = useState(0)
-
+// Рендерим компонент WelcomeMessage и передаем в него проп name со значением переменной userName
+  // Если userName не было бы определено, то можно было бы не передавать проп name, и в сообщении
+  // по умолчанию использовалось бы "пользователь"
   return (
     <>
    
@@ -18,12 +22,8 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      <WelcomeMessage name={userName} />
       <WelcomeMessage />
-      <WelcomeMessage />
-      <WelcomeMessage />
-      <WelcomeMessage />
-      <WelcomeMessage />
-
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
